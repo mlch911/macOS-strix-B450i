@@ -6,9 +6,9 @@
 	<img src="https://ibin.co/4wROyHBs3PAE.png" width="383" height="46"/>
 </p>
 
-Tested with macOS 11.4 — later versions have not been tested. This EFI is not guaranteed to 100% work with your hardware... but it can be used as a starting point to get your machine up and running. Feel free to join the [Telegram](https://t.me/macOSstrixB450i) channel for discussion and updates.
+Tested with macOS 11.6.1 — later versions have not been tested. This EFI is not guaranteed to 100% work with your hardware... but it can be used as a starting point to get your machine up and running. Feel free to join the [Telegram](https://t.me/macOSstrixB450i) channel for discussion and updates.
 
-You will need to [flush a new SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo) if you wish to use iCloud services. The included SMBIOS has been blacklisted by Apple and will likely result in a suspended iCloud account if you choose to use it. You have been warned!
+You will need to [flush a new SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo) if you wish to use iCloud services. The included SMBIOS is blank and will not work.
 
 If you're able to, please consider [donating to AMD OS X.](https://forum.amd-osx.com/index.php?dbtech-donate/drives/amd-os-x.1/donate) Without the team, none of this would be possible!
 
@@ -45,6 +45,10 @@ Tested with BIOS 4301 (March 2021) - try upgrading to this version before troubl
 > For Ryzen G CPUs only - helps reduce audio crackling but **won't** fix it.
 
 ## Known Issues
+
+**Ethernet does not work on macOS Monterey**
+
+* **TLDR: STAY ON BIG SUR IF YOU RELY ON BUILT-IN ETHERNET!** Apple made changes in Monterey which resulted in the SmallTree kext no longer working, unfortunately khronokernel does not own the hardware anymore so it's likely this issue won't be fixed for quite some time.
 
 **Internal WiFi & Bluetooth is not working.**
 
