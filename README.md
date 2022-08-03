@@ -1,32 +1,14 @@
 <p>
-	<img src="https://ibin.co/5zbFfCb4uxve.png">
+	<img src="banner.png">
 </p>
 
-<p align="center">
-	<img src="https://ibin.co/4wROyHBs3PAE.png" width="383" height="46"/>
-</p>
+Tested with macOS 12.3 – later versions have not been tested. This EFI is my personal configuration and is not 100% guaranteed to work with your hardware... but is intended to be used as a reference point to get your hackintosh up and running. Feel free to join the [Telegram](https://t.me/macOSstrixB450i) chat for discussion. Please note that you'll need to [flush a new SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo) if you wish to use iCloud services. The included SMBIOS is intentionally blank.
 
-Tested with macOS 11.6.1 — later versions have not been tested. This EFI is not guaranteed to 100% work with your hardware... but it can be used as a starting point to get your machine up and running. Feel free to join the [Telegram](https://t.me/macOSstrixB450i) channel for discussion and updates.
-
-You will need to [flush a new SMBIOS](https://dortania.github.io/OpenCore-Install-Guide/AMD/zen.html#platforminfo) if you wish to use iCloud services. The included SMBIOS is blank and will not work.
-
-If you're able to, please consider [donating to AMD OS X.](https://forum.amd-osx.com/index.php?dbtech-donate/drives/amd-os-x.1/donate) Without the team, none of this would be possible!
-
-## System Specs
-
-* **Motherboard:** Asus Strix B450-I
-	* LAN: Intel I211-AT
-	* Audio: SupremeFX S1220A
-	* Wireless: Realtek 8822BE
-	* Bluetooth: Laird BT852 (USB)
-	* SSD: Sabrent Rocket 1TB NVMe
-
-* **Processor:** AMD Ryzen 5 2600X
-* **Graphics:** Sapphire Nitro+ AMD Radeon RX 580 8GB
+If you're able to, please consider [donating directly to AMD OS X!](https://forum.amd-osx.com/index.php?dbtech-donate/drives/amd-os-x.1/donate) Without the talented team and forums, this fun would not be possible. 
 
 ## BIOS Settings
 
-Tested with BIOS 4301 (March 2021) - try upgrading to this version before troubleshooting any issues.
+Tested with BIOS 4602 (September 2021) - try upgrading to this version before troubleshooting any issues.
 
 **Boot**
 
@@ -44,16 +26,28 @@ Tested with BIOS 4301 (March 2021) - try upgrading to this version before troubl
 
 > For Ryzen G CPUs only - helps reduce audio crackling but **won't** fix it.
 
-## Known Issues
+## Reference Specifications
 
-**Ethernet does not work on macOS Monterey**
+* **Motherboard:** Asus Strix B450-I
+	* LAN: Intel I211-AT
+	* Audio: SupremeFX S1220A (ALC1150 Codec)
+	* Wireless: Realtek 8822BE
+	* Bluetooth: Laird BT852 (USB)
+	* SSD: Sabrent Rocket 1TB NVMe
 
-* **TLDR: STAY ON BIG SUR IF YOU RELY ON BUILT-IN ETHERNET!** Apple made changes in Monterey which resulted in the SmallTree kext no longer working, unfortunately khronokernel does not own the hardware anymore so it's likely this issue won't be fixed for quite some time.
+* **Processor:** AMD Ryzen 5 2600X
+* **Graphics:** Sapphire Nitro+ AMD Radeon RX 580 8GB
 
-**Internal WiFi & Bluetooth is not working.**
+## Common Questions
 
-* **Fix:** The internal wireless card can be replaced with one that is compatible with macOS.
+**My audio isn't working!**
 
-**Discord stuck in a crash loop.**
+* Certain revisions of this motherboard, either for the Chinese market or those produced around mid-late 2021 have a different device path for the multimedia controller. Try changing the path in your config.plist from ```PciRoot(0x0)/Pci(0x8,0x1)/Pci(0x0,0x3)``` to ```PciRoot(0x0)/Pci(0x8,0x1)/Pci(0x0,0x4)```
 
-* **Fix:** [Here](https://www.reddit.com/r/hackintosh/comments/g6bwuu/discord_keeps_crashing_every_time_i_join_a_voice/fv43nwi?utm_source=share&utm_medium=web2x&context=3)
+**My internal WiFi & Bluetooth isn't working!**
+
+* The internal wireless card is not natively compatible, but can be replaced with one that is compatible with macOS.
+
+**My Discord stuck in a crash loop!**
+
+* [Solution here](https://discord.com/channels/249992304503291905/283346899799638016/953634716479799297) (Opens AMD OS X Discord) I highly reccomend becoming part of this server if you are not already!
